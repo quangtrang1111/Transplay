@@ -1,0 +1,111 @@
+﻿body {
+    overflow: hidden;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.black-color {
+    color: black !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*login*/
+
+
+
+
+
+/*end login*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card-about {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+.about {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d2/Solid_white.png');
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
+.about-text {
+    color: black;
+    margin-top: 5%;
+    margin-bottom: 50px;
+    overflow-y: scroll;
+    overflow-y:auto;
+}
+
+
+
+
+
+

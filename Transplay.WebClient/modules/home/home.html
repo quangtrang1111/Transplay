@@ -1,0 +1,124 @@
+﻿<link href="../../css/progress.css" rel="stylesheet" />
+<link href="../../css/home.css" rel="stylesheet" />
+
+<div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <img class="logo mdl-layout--large-screen-only" src="../../img/transplay.png" />
+            <span class="mdl-layout-title"><a class="link-to-home" ng-click="Reload()">Transplay</a></span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <form name="form" ng-submit="Search()" role="form">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--align-right">
+                    <label class="search-icon mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+                        <i class="material-icons">search</i>
+                    </label>
+                    <div class="mdl-textfield mdl-textfield__expandable-holder">
+                        <input ng-model="Keyword" class="mdl-textfield__input" type="text" id="fixed-header-drawer-exp">
+                        <label class="search-textfield mdl-textfield__label" for="fixed-header-drawer-exp">Look up vocabulary</label>
+                    </div>
+                </div>
+            </form>
+            <!-- Navigation -->
+            <div class="mdl-navigation notification-header">
+                <a class="link-notification md-trigger" data-modal="modal-1" style="color:white;">
+                    <span class="material-icons mdl-badge" data-badge="{{AccountScores}}">golf_course</span>
+                </a>
+            </div>
+            <div class="small-account mdl-layout--large-screen-only">
+                <img class="small-avatar" src="../../img/avatar.jpg">
+                <span class="account-text">{{AccountEmail}}</span>
+                <button id="accbtn1" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                    <i class="material-icons" role="presentation">arrow_drop_down</i>
+                    <span class="visuallyhidden">Accounts</span>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn1">
+                    <li class="mdl-menu__item"><i class="material-icons account-more-icon1">account_box</i><a class="account-more-text1">Account Profile</a></li>
+                    <li class="mdl-menu__item"><i class="material-icons account-more-icon1">vpn_key</i><a class="account-more-text1">Change Password</a></li>
+                    <li ng-click="Logout()" class="mdl-menu__item"><i class="material-icons account-more-icon1">group</i><a class="account-more-text1">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="demo-drawer mdl-layout__drawer">
+        <div id="inner-content-div">
+            <header class="demo-drawer-header mdl-layout--small-screen-only">
+                <img src="../../img/avatar.jpg" class="demo-avatar">
+                <div class="demo-avatar-dropdown">
+                    <span class="account-text">{{AccountEmail}}</span>
+                    <div class="mdl-layout-spacer"></div>
+                    <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                        <i class="material-icons" role="presentation">arrow_drop_down</i>
+                        <span class="visuallyhidden">Accounts</span>
+                    </button>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                        <li class="mdl-menu__item"><i class="material-icons account-more-icon">account_box</i><a>Account Profile</a></li>
+                        <li class="mdl-menu__item"><i class="material-icons account-more-icon">vpn_key</i><a>Change Password</a></li>
+                        <li ng-click="Logout()" class="mdl-menu__item"><i class="material-icons account-more-icon">group</i><a>Log Out</a></li>
+                    </ul>
+                </div>
+            </header>
+            <nav class="demo-navigation mdl-navigation">
+                <a class="mdl-navigation__link" href=""><i class="mdl-color-text--green-400 material-icons function-icon" role="presentation">trending_up</i><span class="function-text">Achieves</span></a>
+                <a class="mdl-navigation__link" href=""><i class="mdl-color-text--pink-400 material-icons function-icon" role="presentation">insert_emoticon</i><span class="function-text">Friends</span></a>
+                <a class="mdl-navigation__link" href=""><i class="mdl-color-text--orange-400 material-icons function-icon" role="presentation">forum</i><span class="function-text">Discussion</span></a>
+                <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons function-icon" role="presentation">settings</i><span class="function-text">Setting</span></a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="main-content demo-drawer">
+        <div class="progress">
+            <p style="width:50%; margin:0px" data-value="{{Process}}">{{LearnWord}}/{{CountWord}} words</p>
+            <progress max="100" value="{{Process}}" class="html5">
+            </progress>
+        </div>
+        <div class="card">
+            <!-- Square card -->
+            <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div style="background-image: url('{{Word.image}}')" class="backgroud-word mdl-card__title mdl-card--expand">
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <div class="mean-word">{{Word.mean}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="answer">
+            <div class="answera" ng-repeat="letter in Word.Letters">
+                <button ng-click="Remove(letter.index)" class="word-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">{{letter.value}}</button>
+            </div>
+        </div>
+
+        <div class="answer">
+            <div class="answera" ng-repeat="letter in Word.Randoms">
+                <button ng-click="Select(letter.index)" class="select-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">{{letter.value}}</button>
+            </div>
+            
+        </div>
+        <div class="answer">
+            <h5>{{Message}}</h5>
+        </div>
+    </main>
+</div>
+
+<!-- Colored FAB button with ripple -->
+<!--<button ng-click="Next()" id="exit-button" class="fab-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--red">
+    <i class="material-icons">skip_next</i>
+</button>
+<div class="mdl-tooltip" for="exit-button">
+    Next
+</div>-->
+<!--<button ng-click="Speech()" id="speech-button" class="fab-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--blue">
+    <i class="material-icons">record_voice_over</i>
+</button>
+<div class="mdl-tooltip" for="speech-button">
+    Speech
+</div>-->
+<button ng-click="Next()" id="check-button" class="fab-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--green">
+    <i class="material-icons">skip_next</i>
+</button>
+<div class="mdl-tooltip" for="check-button">
+    Next
+</div>

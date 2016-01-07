@@ -1,0 +1,70 @@
+﻿<style>
+    .guest {
+        background-image: url('../img/welcome.jpg');
+        background-size: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .guest-content {
+        padding-top: 80px;
+    }
+
+    .card {
+        display: table;
+        margin: 0 auto;
+    }
+
+    .guest-text {
+        color: white;
+        margin-top: 5%;
+        margin-bottom: 50px;
+    }
+
+    .login-text {
+        width: 100% !important;
+    }
+
+    .text-to-about {
+        color: white;
+    }
+</style>
+<link href="../../css/index.css" rel="stylesheet" />
+
+<div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <img class="logo mdl-layout--large-screen-only" src="https://syneducation.files.wordpress.com/2012/03/translate_q.png" />
+            <span class="mdl-layout-title"><a class="link-to-about link-guest" href="#/">Transplay</a></span>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+                <a class="link-to-about mdl-navigation__link right-link link-guest" href="#/login">Login</a>
+                <a class="link-to-about mdl-navigation__link right-link link-guest" href="#/register">Register</a>
+                <a class="link-to-about mdl-navigation__link right-link link-guest" href="#/about">About</a>
+            </nav>
+        </div>
+    </header>
+</div>
+
+<main class="guest guest-content">
+    <div class="card guest-text">
+        <h3>Chơi và học từ vựng mỗi ngày cùng Transplay!</h3>
+        <ul>
+            <li><h4><i>Học từ vui như chơi cùng bạn bè</i></h4></li>
+            <li><h4><i>Học từ vựng yêu thích</i></h4></li>
+            <li><h4><i>Học từ vựng theo độ thông dụng: 1000, 3000, 5000</i></h4></li>
+            <li><h4><i>Học mọi lúc mọi nơi</i></h4></li>
+        </ul>
+    </div>
+    <div class="card">
+        <a href="#/register" class="login-text mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Đăng ký ngay
+        </a>
+
+        <h4 class="text-to-about"><i>Xem chi tiết về Transplay <a class="link-to-about">tại đây</a></i></h4>
+    </div>
+</main>

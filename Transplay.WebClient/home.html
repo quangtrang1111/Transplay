@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Home page - Transplay</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no, maximum-scale=1.0, width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.light_blue-deep_orange.min.css" />
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+                                                          
+    <link href="css/progress.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
+
+    <link href="ModalWindowEffects/css/component.css" rel="stylesheet" />
+    <link href="ModalWindowEffects/css/default.css" rel="stylesheet" />    
+
+    <script src="Scroll/jquery-2.1.4.min.js"></script>
+    <script src="Scroll/jquery.slimscroll.min.js"></script>
+    <script src="Scroll/js.js"></script>
+</head>
+<body>
+    <!-- Uses a transparent header that draws on top of the layout's background -->
+    <div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <img class="logo mdl-layout--large-screen-only" src="https://syneducation.files.wordpress.com/2012/03/translate_q.png" />
+                <span class="mdl-layout-title">Transplay</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation -->
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--align-right">
+                    <label class="search-icon mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+                        <i class="material-icons">search</i>
+                    </label>
+                    <div class="mdl-textfield mdl-textfield__expandable-holder">
+                        <input class="mdl-textfield__input" type="text" id="fixed-header-drawer-exp">
+                        <label class="search-textfield mdl-textfield__label" for="fixed-header-drawer-exp">Look up vocabulary</label>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="mdl-navigation notification-header">
+                    <a class="md-trigger" data-modal="modal-1" href="#" style="color:white;">
+                        <span class="material-icons mdl-badge" data-badge="3">notifications</span>
+                    </a>
+                </div>
+                <div class="small-account mdl-layout--large-screen-only">
+                    <img class="small-avatar" src="http://avatar.nct.nixcdn.com/playlist/2014/09/05/d/9/0/1/1409928845538_500.jpg">
+                    <span class="account-text">quangtrang1111@outlook.com</span>
+                    <button id="accbtn1" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                        <i class="material-icons" role="presentation">arrow_drop_down</i>
+                        <span class="visuallyhidden">Accounts</span>
+                    </button>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn1">
+                        <li class="mdl-menu__item"><i class="material-icons account-more-icon1">account_box</i><div class="account-more-text1">Account Profile</div></li>
+                        <li class="mdl-menu__item"><i class="material-icons account-more-icon1">vpn_key</i><div class="account-more-text1">Change Password</div></li>
+                        <li class="mdl-menu__item"><i class="material-icons account-more-icon1">group</i><div ng-click="Logout()" class="account-more-text1">Log Out</div></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="demo-drawer mdl-layout__drawer">
+            <div id="inner-content-div">
+                <header class="demo-drawer-header mdl-layout--small-screen-only">
+                    <img src="http://avatar.nct.nixcdn.com/playlist/2014/09/05/d/9/0/1/1409928845538_500.jpg" class="demo-avatar">
+                    <div class="demo-avatar-dropdown">
+                        <span class="account-text">quangtrang1111@outlook.com</span>
+                        <div class="mdl-layout-spacer"></div>
+                        <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                            <i class="material-icons" role="presentation">arrow_drop_down</i>
+                            <span class="visuallyhidden">Accounts</span>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                            <li class="mdl-menu__item"><i class="material-icons account-more-icon">account_box</i>Account Profile</li>
+                            <li class="mdl-menu__item"><i class="material-icons account-more-icon">vpn_key</i>Change Password</li>
+                            <li class="mdl-menu__item"><i class="material-icons account-more-icon">group</i>Log Out</li>
+                        </ul>
+                    </div>
+                </header>
+                <nav class="demo-navigation mdl-navigation">
+                    <a class="mdl-navigation__link" href=""><i class="mdl-color-text--green-400 material-icons function-icon" role="presentation">trending_up</i><span class="function-text">Achieves</span></a>
+                    <a class="mdl-navigation__link" href=""><i class="mdl-color-text--pink-400 material-icons function-icon" role="presentation">insert_emoticon</i><span class="function-text">Friends</span></a>
+                    <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-400 material-icons function-icon" role="presentation">shopping_cart</i><span class="function-text">Store</span></a>
+                    <a class="mdl-navigation__link" href=""><i class="mdl-color-text--orange-400 material-icons function-icon" role="presentation">forum</i><span class="function-text">Discussion</span></a>
+                    <a class="mdl-navigation__link" href=""><i class="mdl-color-text--yellow-400 material-icons function-icon" role="presentation">receipt</i><span class="function-text">Blog</span></a>
+                    <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons function-icon" role="presentation">settings</i><span class="function-text">Setting</span></a>
+                </nav>
+
+            </div>                  
+        </div>
+
+        <main class="main-content">
+
+            <div class="progress">
+                <p style="width:50%; margin:0px" data-value="50">20/50 words</p>
+                <progress max="100" value="50" class="html5">
+                    <!-- Browsers that support HTML5 progress element will ignore the html inside `progress` element. Whereas older browsers will ignore the `progress` element and instead render the html inside it. -->
+                    <!--<div class="progress-bar">
+                    <span style="width: 50%">50%</span>
+                </div>-->
+                </progress>
+            </div>
+            <div class="card">
+                <!-- Square card -->
+                <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <div class="mean-word">Con chó</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="answer">
+                <!-- Accent-colored raised button -->
+                <button class="word-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    D
+                </button>
+                <!-- Accent-colored raised button -->
+                <button class="word-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    O
+                </button>
+                <!-- Accent-colored raised button -->
+                <button class="word-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    G
+                </button>
+            </div>
+
+            <div class="answer">
+                <!-- Accent-colored raised button -->
+                <button class="select-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    D
+                </button>
+                <!-- Accent-colored raised button -->
+                <button class="select-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    O
+                </button>
+                <!-- Accent-colored raised button -->
+                <button class="select-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    G
+                </button>
+                <button class="select-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    D
+                </button>
+                <!-- Accent-colored raised button -->
+                <button class="select-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    O
+                </button>
+                <!-- Accent-colored raised button -->
+                <button class="select-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    G
+                </button>
+                <button class="select-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    D
+                </button>
+                <!-- Accent-colored raised button -->
+                <button class="select-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    O
+                </button>
+                <!-- Accent-colored raised button -->
+                <button class="select-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    G
+                </button>
+                <!-- Accent-colored raised button -->
+                <button class="select-letter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    G
+                </button>
+            </div>
+
+        </main>
+    </div>
+               
+    <!-- Colored FAB button with ripple -->
+    <button id="exit-button" class="fab-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--red">
+        <i class="material-icons">stop</i>
+    </button>
+    <div class="mdl-tooltip" for="exit-button">
+        Exit
+    </div>
+    <button id="speech-button" class="fab-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--blue">
+        <i class="material-icons">record_voice_over</i>
+    </button>
+    <div class="mdl-tooltip" for="speech-button">
+        Speech
+    </div>
+    <button id="check-button" class="fab-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--green">
+        <i class="material-icons">check</i>
+    </button>
+    <div class="mdl-tooltip" for="check-button">
+        Check
+    </div>
+
+    <div class="main-modal">
+        <div class="md-modal md-effect-1" id="modal-1">
+            <div class="md-content">
+                <h3>New Notification</h3>
+                <div class="notifica">
+                    <!-- Wide card with share menu button -->
+                    <style>
+                        .demo-card-wide.mdl-card {
+                            width: auto;
+                        }
+
+                        .demo-card-wide > .mdl-card__menu {
+                            color: #fff;
+                        }
+                    </style>
+
+                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__supporting-text">
+                            Chúc mừng!, bạn vừa được lên cấp 2.
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                View
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__supporting-text">
+                            Kenny Sang vừa vược qua điểm số của bạn. Hãy cố gắng hơn nữa.
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                View
+                            </a>
+                        </div>
+                    </div>
+                    <button class="md-close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="ModalWindowEffects/js/modernizr.custom.js"></script>
+    <script src="ModalWindowEffects/js/classie.js"></script>
+    <script src="ModalWindowEffects/js/modalEffects.js"></script>
+    <script>                       
+                var polyfilter_scriptpath = '/ModalWindowEffects/js/';
+    </script>
+    <script src="ModalWindowEffects/js/cssParser.js"></script>
+    <script src="ModalWindowEffects/js/css-filters-polyfill.js"></script>
+</body>
+</html>

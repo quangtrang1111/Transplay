@@ -1,0 +1,58 @@
+﻿<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<style>
+    .guest-content {
+        padding-top: 80px;
+    }
+
+    .login-text {
+        width: 100% !important;
+    }
+</style>
+<link href="../../css/index.css" rel="stylesheet" />
+                             
+<div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <img class="logo mdl-layout--large-screen-only" src="https://syneducation.files.wordpress.com/2012/03/translate_q.png" />
+            <span class="mdl-layout-title"><a class="link-to-about link-guest" href="#/">Transplay</a></span>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+                <a class="link-to-about mdl-navigation__link right-link link-guest" href="#/login">Login</a>
+                <a class="link-to-about mdl-navigation__link right-link link-guest" href="#/register">Register</a>
+                <a class="link-to-about mdl-navigation__link right-link link-guest" href="#/about">About</a>
+            </nav>
+        </div>
+    </header>
+</div>
+
+<main class="guest-content" ng-controller="RegisterController"  ng-model="AccountRegister">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet"></div>
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+            
+                <div class="login-text mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input ng-model="AccountRegister.Email" class="mdl-textfield__input" type="text">
+                    <label class="mdl-textfield__label">* Email...</label>
+                </div>
+                <div class="login-text mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input ng-model="AccountRegister.Password" class="mdl-textfield__input" type="password">
+                    <label class="mdl-textfield__label">* Password...</label>
+                </div>
+                <div class="login-text mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input ng-model="AccountRegister.Repassword" class="mdl-textfield__input" type="password">
+                    <label class="mdl-textfield__label">* Repassword...</label>
+                </div>
+                <div class="login-text mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input ng-model="AccountRegister.Name" class="mdl-textfield__input" type="text">
+                    <label class="mdl-textfield__label">* Name...</label>
+                </div>
+                <div class="login-text mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label>By registration new account you was accept our <a class="link-to-about">terms of service</a> and <a class="link-to-about">privacy policy</a></label>
+                </div>
+                <button ng-click="Register()" class="login-text mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Register</button>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet"></div>
+    </div>
+</main>

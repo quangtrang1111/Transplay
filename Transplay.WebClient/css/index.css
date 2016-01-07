@@ -1,0 +1,51 @@
+﻿.demo-layout-transparent {
+    background-color: white;
+}
+
+    .demo-layout-transparent .mdl-layout__header,
+    .demo-layout-transparent .mdl-layout__drawer-button {
+        color: white;
+        background-color: deepskyblue;
+    }
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.demo-layout .demo-navigation .mdl-navigation__link {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.56);
+    font-weight: 500;
+}
+
+    .demo-layout .demo-navigation .mdl-navigation__link:hover {
+        background-color: #00BCD4;
+        color: #37474F;
+    }
+
+.demo-navigation .mdl-navigation__link .material-icons {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.56);
+    margin-right: 32px;
+}
+
+.right-link {
+    font-weight: 700 !important;
+}
+
+.link-guest {
+    color: white !important;
+}                                                      
+
+.link-to-about {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.mdl-layout__container {
+    position:relative !important;
+}
